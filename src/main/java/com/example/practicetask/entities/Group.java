@@ -1,24 +1,17 @@
 package com.example.practicetask.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Group {
     @Id
     public Long id_group;
     private int size;
-
-    public Long getId() {
-        return id_group;
-    }
-    public void setId(Long id_group) {
-        this.id_group = id_group;
-    }
-
-    public int getSize() {
-        return size;
-    }
-    public void setSize(int size) {
-        this.size = size;
-    }
-
 }

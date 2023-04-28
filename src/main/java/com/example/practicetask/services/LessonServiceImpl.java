@@ -6,6 +6,7 @@ import com.example.practicetask.entities.Lesson;
 import com.example.practicetask.repositories.LessonRepository;
 import org.springframework.stereotype.Service;
 import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,12 +43,12 @@ public class LessonServiceImpl implements LessonService{
     }
 
     @Override
-    public void insertLesson(Long id_coach, Long id_group, Date date, String time) {
+    public void insertLesson(Long id_coach, Long id_group, Date date, Time time) {
         lessonRepository.insertLesson(id_coach, id_group, date, time);
     }
 
     @Override
-    public void updateLesson(Long id_coach, Long id_group, Date date, String time, Long id_lesson) {
+    public void updateLesson(Long id_coach, Long id_group, Date date, Time time, Long id_lesson) {
         var lesson = lessonRepository.getLesson(id_lesson).orElseThrow();
         lessonRepository.updateLesson(id_coach, id_group, date, time, lesson.id_lesson);
     }

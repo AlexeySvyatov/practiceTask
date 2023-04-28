@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,11 +32,11 @@ public interface LessonRepository extends CrudRepository<Lesson, Long> {
 
     @Modifying
     @Query("insert into lessons (id_coach, id_group, date, time) values (:coach, :group, :date, :time)")
-    void insertLesson(@Param("coach") Long id_coach, @Param("group") Long id_group, @Param("date") Date date, @Param("time") String time);
+    void insertLesson(@Param("coach") Long id_coach, @Param("group") Long id_group, @Param("date") Date date, @Param("time") Time time);
 
     @Modifying
     @Query("update lessons set id_coach = :coach, id_group = :group, date = :date, time = :time where id_lesson = :id")
-    void updateLesson(@Param("coach") Long id_coach, @Param("group") Long id_group, @Param("date") Date date, @Param("time") String time, @Param("id") Long id_lesson);
+    void updateLesson(@Param("coach") Long id_coach, @Param("group") Long id_group, @Param("date") Date date, @Param("time") Time time, @Param("id") Long id_lesson);
 
     @Modifying
     @Query("delete from lessons where id_lesson = :id")

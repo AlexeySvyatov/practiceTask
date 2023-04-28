@@ -18,12 +18,12 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
     List<Student> getStudents();
 
     @Modifying
-    @Query("insert into students (name, email, phone) values (:name, :email, :phone)")
-    void insertStudent(@Param("name") String name, @Param("email") String email, @Param("phone") String phone);
+    @Query("insert into students (name, email, phone, id_group) values (:name, :email, :phone, :id_group)")
+    void insertStudent(@Param("name") String name, @Param("email") String email, @Param("phone") String phone, @Param("id_group") Long id_group);
 
     @Modifying
-    @Query("update students set name = :name, email = :email, phone = :phone where id_student = :id")
-    void updateStudent(@Param("name") String name, @Param("email") String email, @Param("phone") String phone, @Param("id") Long id_student);
+    @Query("update students set name = :name, email = :email, phone = :phone, id_group = :id_group where id_student = :id")
+    void updateStudent(@Param("name") String name, @Param("email") String email, @Param("phone") String phone, @Param("id_group") Long id_group, @Param("id") Long id_student);
 
     @Modifying
     @Query("delete from students where id_student = :id")

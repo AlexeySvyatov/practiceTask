@@ -1,45 +1,19 @@
 package com.example.practicetask.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.sql.Date;
+import java.sql.Time;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class StudentLessonsDTO {
     private Long lessonID;
     private String coachName;
     private Date date;
-    private String time;
-
-    public StudentLessonsDTO(Long lessonID, String coachName, Date date, String time) {
-        this.lessonID = lessonID;
-        this.coachName = coachName;
-        this.date = date;
-        this.time = time;
-    }
-
-    public Long getLessonID() {
-        return lessonID;
-    }
-    public void setLessonID(Long lessonID) {
-        this.lessonID = lessonID;
-    }
-
-    public String getCoachID() {
-        return coachName;
-    }
-    public void setCoachID(String coachName) {
-        this.coachName = coachName;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-    public void setTime(String time) {
-        this.time = time;
-    }
+    private Time time;
 }

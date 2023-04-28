@@ -24,14 +24,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void insertStudent(String name, String email, String phone) {
-        studentRepository.insertStudent(name, email, phone);
+    public void insertStudent(String name, String email, String phone, Long id_group) {
+        studentRepository.insertStudent(name, email, phone, id_group);
     }
 
     @Override
-    public void updateStudent(String name, String email, String phone, Long id_student) {
+    public void updateStudent(String name, String email, String phone, Long id_group, Long id_student) {
         var student = studentRepository.getStudent(id_student).orElseThrow();
-        studentRepository.updateStudent(name, email, phone, student.id_student);
+        studentRepository.updateStudent(name, email, phone, id_group, student.id_student);
     }
 
     @Override

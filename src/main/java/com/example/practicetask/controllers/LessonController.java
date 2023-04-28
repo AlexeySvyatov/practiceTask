@@ -35,12 +35,12 @@ public class LessonController {
     }
 
     @GetMapping(value = "coaches/{id_coach}/lessons/new")
-    public List<CoachLessonsDTO> newLessons(@PathVariable Long id_coach) {
+    public List<CoachLessonsDTO> readNewLessons(@PathVariable Long id_coach) {
         return lessonService.getNewLessons(id_coach);
     }
 
     @GetMapping(value = "coaches/{id_coach}/lessons/old")
-    public List<CoachLessonsDTO> oldLessons(@PathVariable Long id_coach) {
+    public List<CoachLessonsDTO> readOldLessons(@PathVariable Long id_coach) {
         return lessonService.getOldLessons(id_coach);
     }
 
